@@ -3,13 +3,30 @@ package funcs
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func TestOs() {
 	/*获取系统相关信息*/
-	getOsInfo()
+	//getOsInfo()
 	/*获取文件相关信息*/
-	getFileInfo()
+	//getFileInfo()
+	/*写文件*/
+	writeFile()
+}
+func writeFile() {
+	file := "./app.log"
+	f, err := os.Create(file)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer f.Close()
+	for i := 1; i < 10; i++ {
+		si := strconv.Itoa(i)
+		f.WriteString(si)
+	}
+	f.Write([]byte("go"))
 }
 func getFileInfo() {
 	/*目录判断*/
@@ -24,7 +41,7 @@ func getFileInfo() {
 		if err == nil {
 			rd, err := fo.Readdir(0)
 			if err == nil {
-				for i := 0;i < len(rd);i++ {
+				for i := 0; i < len(rd); i++ {
 					fmt.Println(rd[i].Name())
 				}
 			}
