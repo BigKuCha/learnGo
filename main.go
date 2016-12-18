@@ -1,5 +1,7 @@
 package main
 
+import "learngo/funcs"
+
 func main() {
 	/*反射*/
 	//funcs.TestReflect()
@@ -12,4 +14,7 @@ func main() {
 
 	/*包strconv*/
 	//funcs.TestStrconv()
+
+	/*包log*/
+	funcs.TestLogger()
 }
