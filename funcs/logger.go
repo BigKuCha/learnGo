@@ -31,13 +31,17 @@ func TestLogger() {
 	fmt.Println(&buf)
 
 	/*log写入文件*/
-	file := "./logs/app" + time.Now().Format("2006-01-02") + ".log"
-	fw, err := os.Create(file)
-	if err != nil {
-		fmt.Println("创建log文件失败")
-		return
-	}
-	fw.WriteString(buf.String())
-	defer fw.Close()
+	buf.Truncate(0)
+	logger.SetFlags(log.Lshortfile | log.Ltime | log.Ldate)
+	logger.Println("警告")
 
+	var fw *os.File
+	rootPath, _ := os.Getwd()
+	file := rootPath + "/logs/app" + time.Now().Format("2006-01-02") + ".log"
+	fw, err := os.OpenFile(file, os.O_CREATE | os.O_APPEND | os.O_WRONLY, os.ModePerm)
+	_, err = fw.WriteString(buf.String())
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer fw.Close()
 }
