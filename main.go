@@ -16,5 +16,12 @@ func main() {
 	//funcs.TestStrconv()
 
 	/*包log*/
-	funcs.TestLogger()
+	//funcs.TestLogger()
+
+	/*goroutine*/
+	//funcs.TestGoRoutineFib()
+	//funcs.TestGoroutineLock()
+
+	/*channels*/
+	funcs.TestChannels()
 }
