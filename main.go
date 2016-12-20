@@ -23,5 +23,8 @@ func main() {
 	//funcs.TestGoroutineLock()
 
 	/*channels*/
-	funcs.TestChannels()
+	//funcs.TestChannels()
+
+	/*包bufio*/
+	funcs.TestBufio()
 }
