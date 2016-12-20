@@ -1,6 +1,6 @@
 package main
 
-import "learngo/funcs"
+import "learnGo/funcs"
 
 func main() {
 	/*反射*/
