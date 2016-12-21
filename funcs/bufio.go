@@ -34,12 +34,12 @@ func readAndPeek() {
 }
 
 func readLine() {
-	sr := strings.NewReader("ABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890")
-	bufReader := bufio.NewReaderSize(sr, 0)
-
+	sr := strings.NewReader("ABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\nabcdefgd\n!@#$%a&")
+	bufReader := bufio.NewReaderSize(sr, 0) // 缓冲区最小16字节 bufio.minReadBufferSize
 	for line, isPrefix, err := []byte{0}, false, error(nil); len(line) > 0 && err == nil; {
 		line, isPrefix, err = bufReader.ReadLine()
-		fmt.Printf("读取的行数：%d \n", len(line))
-		fmt.Printf("一行的内容是%q, %t, 错误是：%v", line, isPrefix, err)
+		//line, err = bufReader.ReadSlice('\n')
+		fmt.Printf("当前buffer还可读取的字节数：%d \n", bufReader.Buffered()) //写入位置减去读取位置
+		fmt.Printf("读取的字节长度是%d,内容是%q, 是否是行首%t, 错误是：%v\n", len(line), line, isPrefix, err)
 	}
 }
