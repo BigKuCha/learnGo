@@ -31,5 +31,8 @@ func main() {
 	//funcs.TestBufio()
 
 	/*包flag*/
-	funcs.TestFlag()
+	//funcs.TestFlag()
+
+	/*包fmt*/
+	funcs.TestFmt()
 }
