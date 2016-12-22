@@ -28,5 +28,8 @@ func main() {
 	//funcs.TestChannels()
 
 	/*包bufio*/
-	funcs.TestBufio()
+	//funcs.TestBufio()
+
+	/*包flag*/
+	funcs.TestFlag()
 }

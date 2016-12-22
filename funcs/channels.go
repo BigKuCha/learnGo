@@ -7,7 +7,7 @@ import (
 
 func TestChannels() {
 	/*基础用法*/
-	//basicUse()
+	//basicUseOfChan()
 
 	/*rangeChannel*/
 	//rangeChan()
@@ -16,7 +16,7 @@ func TestChannels() {
 	cacheChan()
 }
 
-func basicUse() {
+func basicUseOfChan() {
 	ch := make(chan int)
 	defer close(ch)
 	go func() {
