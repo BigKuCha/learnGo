@@ -35,4 +35,7 @@ func main() {
 
 	/*包fmt*/
 	funcs.TestFmt()
+
+	/*包os/exec*/
+	funcs.TestExec()
 }
