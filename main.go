@@ -34,7 +34,7 @@ func main() {
 	//funcs.TestFlag()
 
 	/*包fmt*/
-	funcs.TestFmt()
+	//funcs.TestFmt()
 
 	/*包os/exec*/
 	funcs.TestExec()
