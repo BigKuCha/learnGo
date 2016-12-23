@@ -7,6 +7,7 @@ import (
 	"log"
 	"bufio"
 	"bytes"
+	"time"
 )
 
 func TestExec() {
@@ -23,7 +24,35 @@ func TestExec() {
 	//execPipe()
 
 	/*查看进程*/
-	getThread("mysql")
+	//getThread("mysql")
+
+	exportExcel()
+}
+
+func exportExcel() {
+	ch := make(chan string)
+	defer close(ch)
+	go func() {
+		start, _ := time.Parse("01/2006", "06/2015")
+		end, _ := time.Parse("01/2006", "12/2016")
+		for start.Before(end) {
+			month := start.Format("200601")
+			ch <- month
+			start = start.AddDate(0, 1, 0);
+		}
+	}()
+
+	for month := range ch {
+		//month的地址相同，而goroutine调用的顺序是不确定的，所以进入线程的month值不稳定
+		//_m在每次循环的时候重新分配内存地址，再传入goroutine的时候是确定值的！
+		_m := month
+		go func() {
+			fmt.Printf("导出%s月份的报表\n", _m)
+			cmd := exec.Command("php", "/Users/bigkucha/Work/Admin/artisan", "finance:export", _m)
+			cmd.Stdout = os.Stdout
+			cmd.Run()
+		}()
+	}
 }
 
 //简单用法
