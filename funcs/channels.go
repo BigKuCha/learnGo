@@ -16,6 +16,25 @@ func TestChannels() {
 	cacheChan()
 }
 
+func test() {
+	var ch = make(chan int)
+	num := 11
+	go func() {
+		for i := 1; i <= num; i++ {
+			ch <- i
+			//fmt.Println("++", i)
+		}
+		close(ch)
+	}()
+	for ii := range ch {
+		val := ii
+		go func() {
+			fmt.Println("--", val)
+		}()
+	}
+	fmt.Println("程序运行结束")
+}
+
 func basicUseOfChan() {
 	ch := make(chan int)
 	defer close(ch)
