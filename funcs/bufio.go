@@ -1,9 +1,9 @@
 package funcs
 
 import (
-	"strings"
 	"bufio"
 	"fmt"
+	"strings"
 )
 
 func TestBufio() {

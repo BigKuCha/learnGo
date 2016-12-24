@@ -2,8 +2,8 @@ package funcs
 
 import (
 	"io"
-	"net"
 	"log"
+	"net"
 	"time"
 )
 

@@ -1,12 +1,12 @@
 package funcs
 
 import (
-	"os/exec"
-	"fmt"
-	"os"
-	"log"
 	"bufio"
 	"bytes"
+	"fmt"
+	"log"
+	"os"
+	"os/exec"
 	"time"
 )
 
@@ -38,7 +38,7 @@ func exportExcel() {
 		for start.Before(end) {
 			month := start.Format("200601")
 			ch <- month
-			start = start.AddDate(0, 1, 0);
+			start = start.AddDate(0, 1, 0)
 		}
 	}()
 

@@ -2,8 +2,8 @@ package funcs
 
 import (
 	"bytes"
-	"log"
 	"fmt"
+	"log"
 	"os"
 	"time"
 )
@@ -11,7 +11,7 @@ import (
 func TestLogger() {
 	/*输出log*/
 	var buf bytes.Buffer
-	logger := log.New(&buf, "Log: ", log.LstdFlags | log.Lshortfile)
+	logger := log.New(&buf, "Log: ", log.LstdFlags|log.Lshortfile)
 	logger.Print("我是日志信息")
 	fmt.Print(&buf)
 
@@ -38,7 +38,7 @@ func TestLogger() {
 	var fw *os.File
 	rootPath, _ := os.Getwd()
 	file := rootPath + "/logs/app" + time.Now().Format("2006-01-02") + ".log"
-	fw, err := os.OpenFile(file, os.O_CREATE | os.O_APPEND | os.O_WRONLY, os.ModePerm)
+	fw, err := os.OpenFile(file, os.O_CREATE|os.O_APPEND|os.O_WRONLY, os.ModePerm)
 	_, err = fw.WriteString(buf.String())
 	if err != nil {
 		fmt.Println(err)

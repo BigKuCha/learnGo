@@ -10,7 +10,7 @@ type car struct {
 }
 
 func TestFmt() {
-	carBMW := car{Brand:"BMW", Price:500000}
+	carBMW := car{Brand: "BMW", Price: 500000}
 	fmt.Printf("%v\n", carBMW)  //默认格式
 	fmt.Printf("%+v\n", carBMW) //打印struct（包含字段名）
 	fmt.Printf("%#v\n", carBMW) //值的Go语法表示
