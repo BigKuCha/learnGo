@@ -13,7 +13,8 @@ func TestChannels() {
 	//rangeChan()
 
 	/*带缓存的chan*/
-	cacheChan()
+	//cacheChan()
+	test()
 }
 
 func test() {
@@ -32,6 +33,7 @@ func test() {
 			fmt.Println("--", val)
 		}()
 	}
+	time.Sleep(5 * time.Second)
 	fmt.Println("程序运行结束")
 }
 
