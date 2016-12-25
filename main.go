@@ -25,7 +25,7 @@ func main() {
 	//funcs.TestGoroutineLock()
 
 	/*channels*/
-	funcs.TestChannels()
+	//funcs.TestChannels()
 
 	/*包bufio*/
 	//funcs.TestBufio()
@@ -38,4 +38,8 @@ func main() {
 
 	/*包os/exec*/
 	//funcs.TestExec()
+
+	/*Goroutine with Channel*/
+	//funcs.TestRouChan()
+	funcs.TestExport()
 }
