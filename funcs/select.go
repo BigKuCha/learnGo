@@ -6,6 +6,26 @@ import (
 )
 
 func TestSelect() {
+	//testSelect()
+	testRange()
+}
+
+func testRange() {
+	ticker := time.Tick(1e9)
+	//for {
+	//	select {
+	//	case t := <-ticker:
+	//		fmt.Println(t.Format("2006.01.02 15:04:05"))
+	//	case <-time.After(time.Second * 3):
+	//		fmt.Println("过去10秒了，不玩了")
+	//		return
+	//	}
+	//}
+	for t := range ticker {
+		fmt.Println(t.Format("2006.01.02 15:04:05"))
+	}
+}
+func testSelect() {
 	chanInt := make(chan int)
 	chanStr := make(chan string)
 	go func() {
@@ -15,7 +35,6 @@ func TestSelect() {
 		}
 		close(chanInt)
 	}()
-
 	go func() {
 		start := time.Now()
 		end := time.Now().Add(5 * time.Second)
