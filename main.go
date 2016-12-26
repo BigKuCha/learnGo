@@ -1,8 +1,6 @@
 package main
 
-import (
-	"learnGo/funcs"
-)
+import "learnGo/funcs"
 
 func main() {
 	/*反射*/
@@ -41,5 +39,8 @@ func main() {
 
 	/*Goroutine with Channel*/
 	//funcs.TestRouChan()
-	funcs.TestExport()
+	//funcs.TestExport()
+
+	/*Select*/
+	funcs.TestSelect()
 }
