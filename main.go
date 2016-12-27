@@ -1,8 +1,13 @@
 package main
 
-import "learnGo/funcs"
+import (
+	"learnGo/utils"
+)
 
 func main() {
+	/*Excel操作*/
+	utils.TestExcel()
+
 	/*反射*/
 	//funcs.TestReflect()
 
@@ -42,5 +47,5 @@ func main() {
 	//funcs.TestExport()
 
 	/*Select*/
-	funcs.TestSelect()
+	//funcs.TestSelect()
 }
