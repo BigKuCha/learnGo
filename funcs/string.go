@@ -66,3 +66,7 @@ func TestString() {
 	reader := strings.NewReader(s8)
 	fmt.Printf("字符串s8的长度为%d", reader.Len())
 }
+
+func IsContains(s, t string) bool {
+	return strings.Contains(s, t)
+}
