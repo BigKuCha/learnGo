@@ -1,12 +1,13 @@
 package main
 
-import (
-	"learnGo/utils"
-)
+import "learnGo/funcs"
 
 func main() {
+	/*goroutine more*/
+	funcs.TestG()
+
 	/*Excel操作*/
-	utils.TestExcel()
+	//utils.TestExcel()
 
 	/*反射*/
 	//funcs.TestReflect()
