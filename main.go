@@ -4,7 +4,7 @@ import "learnGo/funcs"
 
 func main() {
 	/*goroutine more*/
-	funcs.TestG()
+	//funcs.TestG()
 
 	/*Excel操作*/
 	//utils.TestExcel()
@@ -49,4 +49,7 @@ func main() {
 
 	/*Select*/
 	//funcs.TestSelect()
+
+	/*信号*/
+	funcs.TestSignal()
 }
