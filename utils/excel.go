@@ -41,10 +41,11 @@ func writeToExcel(title []string, data []interface{}, filename string) {
 		for _, t := range title {
 			_axis := fmt.Sprintf("%c%d", axis, k)
 			if k == 1 {
+				//写入头
 				xlsx.SetCellValue("Sheet1", _axis, t)
 			} else {
-				//v := v.FieldByName(strings.Title(t))
-				xlsx.SetCellValue("Sheet1", _axis, v.FieldByName(strings.Title(t)).String())
+				//写入内容
+				xlsx.SetCellValue("Sheet1", _axis, v.FieldByName(strings.Title(t)).Interface())
 			}
 			axis++
 		}
