@@ -24,7 +24,7 @@ func TestSignal() {
 		case syscall.SIGINT:
 			fmt.Println("你按下了ctrl c中断信号！")
 		case syscall.SIGQUIT:
-			fmt.Println("你按下了Esc，程序继续运行")
+			fmt.Println(`你按下了ctrl \，程序继续运行`)
 		}
 	}
 }
