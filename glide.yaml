@@ -1,3 +1,4 @@
 package: learngo
 import:
 - package: github.com/Luxurioust/excelize
+- package: github.com/streadway/amqp

@@ -1,13 +1,25 @@
 package main
 
-import "learnGo/funcs"
+import "learnGo/utils"
 
 func main() {
-	/*goroutine more*/
-	//funcs.TestG()
+	//testFuncs()
+	testUtils()
+}
+
+/*功能*/
+func testUtils() {
+	/*消息队列*/
+	utils.TestRabbitMQ()
 
 	/*Excel操作*/
 	//utils.TestExcel()
+}
+
+/*包*/
+func testFuncs() {
+	/*goroutine more*/
+	//funcs.TestG()
 
 	/*反射*/
 	//funcs.TestReflect()
@@ -51,5 +63,5 @@ func main() {
 	//funcs.TestSelect()
 
 	/*信号*/
-	funcs.TestSignal()
+	//funcs.TestSignal()
 }
