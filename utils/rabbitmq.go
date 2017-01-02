@@ -3,6 +3,9 @@ package utils
 import (
 	"github.com/streadway/amqp"
 	"log"
+	"time"
+	"encoding/json"
+	"fmt"
 )
 
 var (
@@ -29,14 +32,31 @@ func init() {
 }
 
 func TestRabbitMQ() {
-	topicMQ()
+	//topicMQ()
 	//directMQ()
 	//fanoutMQ()
+
+	consumeMQ()
+}
+
+func consumeMQ() {
+	msgs, err := channel.Consume("directQueue", "", false, false, false, false, nil)
+	if err != nil {
+		log.Fatalln("读取失败", err)
+	}
+	for _msg := range msgs {
+		var msg map[string]interface{}
+		//log.Fatalf("%+v", _msg.Body)
+		err = json.Unmarshal([]byte(_msg.Body), &msg)
+		fmt.Printf("ID是%v,时间是%v \n", msg["ID"], msg["Time"])
+		time.Sleep(1e9)
+		_msg.Ack(true)
+	}
 }
 
 //扇列模式，不需要路由，消息会发送到绑定此交换机上的所有队列
 func fanoutMQ() {
-	err := channel.ExchangeDeclare(FanoutExchange, "fanout", true, false, false, false, nil)
+	err := channel.ExchangeDeclare(FanoutExchange, amqp.ExchangeFanout, true, false, false, false, nil)
 	if err != nil {
 		log.Fatalln("交换机声明错误", err)
 	}
@@ -60,18 +80,26 @@ func directMQ() {
 	directQueueName := "directQueue"
 	//不需要声明交换机，默认使用rabbitmq的默认交换机
 	channel.QueueDeclare(directQueueName, true, false, false, false, nil)
-	msg := amqp.Publishing{
-		Body:[]byte("我是消息体"),
-	}
-	err := channel.Publish("", directQueueName, false, false, msg) //自动创建`directQueueName`的交换机
-	if err != nil {
-		log.Fatalln("消息发送失败", err)
+
+	for i := 0; i < 50000; i++ {
+		body := map[string]interface{}{
+			"ID":  i,
+			"Time":time.Now().Format("2006-01-02 15:04:05"),
+		}
+		_body, err := json.Marshal(body)
+		if err != nil {
+			log.Fatalln("json转换错误", err)
+		}
+		msg := amqp.Publishing{
+			Body:[]byte(_body),
+		}
+		channel.Publish("", directQueueName, false, false, msg)
 	}
 }
 
 //主题模式，消息会发送到该交换机上匹配路由的队列上
 func topicMQ() {
-	err := channel.ExchangeDeclare(TopicExchange, "topic", true, false, false, false, nil)
+	err := channel.ExchangeDeclare(TopicExchange, amqp.ExchangeTopic, true, false, false, false, nil)
 	if err != nil {
 		log.Fatalln("交换机声明错误", err)
 	}
