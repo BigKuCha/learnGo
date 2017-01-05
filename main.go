@@ -10,10 +10,10 @@ func main() {
 /*功能*/
 func testUtils() {
 	/*消息队列*/
-	utils.TestRabbitMQ()
+	//utils.TestRabbitMQ()
 
 	/*Excel操作*/
-	//utils.TestExcel()
+	utils.TestExcel()
 }
 
 /*包*/

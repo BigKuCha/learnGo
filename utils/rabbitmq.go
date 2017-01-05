@@ -20,7 +20,15 @@ type myMsg struct {
 	Key  string
 }
 
-func init() {
+func TestRabbitMQ() {
+	//topicMQ()
+	//directMQ()
+	//fanoutMQ()
+
+	consumeMQ()
+}
+
+func getChannel() {
 	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672")
 	if err != nil {
 		log.Fatalln("消息队列连接失败！", err)
@@ -31,15 +39,8 @@ func init() {
 	}
 }
 
-func TestRabbitMQ() {
-	//topicMQ()
-	//directMQ()
-	//fanoutMQ()
-
-	consumeMQ()
-}
-
 func consumeMQ() {
+	getChannel()
 	msgs, err := channel.Consume("directQueue", "", false, false, false, false, nil)
 	if err != nil {
 		log.Fatalln("读取失败", err)
@@ -56,6 +57,7 @@ func consumeMQ() {
 
 //扇列模式，不需要路由，消息会发送到绑定此交换机上的所有队列
 func fanoutMQ() {
+	getChannel()
 	err := channel.ExchangeDeclare(FanoutExchange, amqp.ExchangeFanout, true, false, false, false, nil)
 	if err != nil {
 		log.Fatalln("交换机声明错误", err)
@@ -77,6 +79,7 @@ func fanoutMQ() {
 
 //直连模式，不需要声明交换机，路由名称默认为队列名称，消息直接发送到相应队列
 func directMQ() {
+	getChannel()
 	directQueueName := "directQueue"
 	//不需要声明交换机，默认使用rabbitmq的默认交换机
 	channel.QueueDeclare(directQueueName, true, false, false, false, nil)
@@ -99,6 +102,7 @@ func directMQ() {
 
 //主题模式，消息会发送到该交换机上匹配路由的队列上
 func topicMQ() {
+	getChannel()
 	err := channel.ExchangeDeclare(TopicExchange, amqp.ExchangeTopic, true, false, false, false, nil)
 	if err != nil {
 		log.Fatalln("交换机声明错误", err)

@@ -7,6 +7,7 @@ import (
 	"time"
 	"reflect"
 	"strings"
+	"log"
 )
 
 type user struct {
@@ -16,15 +17,45 @@ type user struct {
 }
 
 func TestExcel() {
-	title := []string{"name", "age", "address"}
+	readExcel()
+	/*title := []string{"name", "age", "address"}
 	data := []interface{}{
 		user{"Joe", 19, "北京市"},
 		user{"张三", 26, "天津市"},
 		user{"李四", 22, "河北省"},
 		user{"张亮", 40, "大连市"},
 	}
-	writeToExcel(title, data, "user")
+	writeToExcel(title, data, "user")*/
+
 	//createExcel()
+}
+func readExcel() {
+	path, _ := os.Getwd()
+	file := path + "/utils/tests/test.xlsx"
+
+	xlsx, err := excelize.OpenFile(file)
+	if err != nil {
+		log.Fatalln("文件打开失败", err)
+	}
+
+	valOfA2 := xlsx.GetCellValue("Sheet1", "A2")
+	fmt.Printf("A2的值是：%s \n", valOfA2)
+
+	sheetCount := xlsx.SheetCount
+	fmt.Printf("共%d个Sheets \n", sheetCount)
+
+	rows := xlsx.GetRows("Sheet1")
+	for k, row := range rows {
+		if k == 0 {
+			continue
+		}
+		name := row[0]
+		salary := row[1]
+		address := row[2]
+		sex := row[3]
+		
+		fmt.Printf("姓名：%s; 工资：%s; 地址：%s; 性别：%s \n", name, salary, address, sex)
+	}
 }
 
 func writeToExcel(title []string, data []interface{}, filename string) {
