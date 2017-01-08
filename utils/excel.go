@@ -1,13 +1,13 @@
 package utils
 
 import (
-	"github.com/Luxurioust/excelize"
 	"fmt"
+	"github.com/Luxurioust/excelize"
+	"log"
 	"os"
-	"time"
 	"reflect"
 	"strings"
-	"log"
+	"time"
 )
 
 type user struct {
@@ -53,7 +53,7 @@ func readExcel() {
 		salary := row[1]
 		address := row[2]
 		sex := row[3]
-		
+
 		fmt.Printf("姓名：%s; 工资：%s; 地址：%s; 性别：%s \n", name, salary, address, sex)
 	}
 }

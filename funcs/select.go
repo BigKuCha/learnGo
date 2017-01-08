@@ -1,8 +1,8 @@
 package funcs
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
 
 func TestSelect() {

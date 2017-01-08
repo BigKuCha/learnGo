@@ -1,12 +1,12 @@
 package funcs
 
 import (
-	"os"
-	"syscall"
 	"fmt"
+	"os"
 	"os/signal"
-	"time"
 	"sync"
+	"syscall"
+	"time"
 )
 
 func TestSignal() {

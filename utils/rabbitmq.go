@@ -1,11 +1,11 @@
 package utils
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/streadway/amqp"
 	"log"
 	"time"
-	"encoding/json"
-	"fmt"
 )
 
 var (
@@ -69,7 +69,7 @@ func fanoutMQ() {
 	channel.QueueBind("fanoutQueue2", "", FanoutExchange, false, nil)
 
 	msg := amqp.Publishing{
-		Body:[]byte("我是扇列消息"),
+		Body: []byte("我是扇列消息"),
 	}
 	err = channel.Publish(FanoutExchange, "", false, false, msg)
 	if err != nil {
@@ -86,15 +86,15 @@ func directMQ() {
 
 	for i := 0; i < 50000; i++ {
 		body := map[string]interface{}{
-			"ID":  i,
-			"Time":time.Now().Format("2006-01-02 15:04:05"),
+			"ID":   i,
+			"Time": time.Now().Format("2006-01-02 15:04:05"),
 		}
 		_body, err := json.Marshal(body)
 		if err != nil {
 			log.Fatalln("json转换错误", err)
 		}
 		msg := amqp.Publishing{
-			Body:[]byte(_body),
+			Body: []byte(_body),
 		}
 		channel.Publish("", directQueueName, false, false, msg)
 	}
