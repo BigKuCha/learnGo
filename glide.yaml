@@ -1,4 +1,5 @@
 package: learngo
 import:
-- package: github.com/Luxurioust/excelize
 - package: github.com/streadway/amqp
+- package: github.com/tealeg/xlsx
+  version: ^1.0.0

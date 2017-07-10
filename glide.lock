@@ -1,8 +1,8 @@
-hash: 6e1530b98eba0a7fe57b1e28844c572092844149e07399b15c0a28d1e937ed59
-updated: 2017-01-01T21:47:02.590815011+08:00
+hash: b720364971b085392d689070bc0f7b8091f2c67ef09edce012aae8258d160f76
+updated: 2017-07-10T17:16:40.064731553+08:00
 imports:
-- name: github.com/Luxurioust/excelize
-  version: f958f05a3bf6f9fdc7f76539d9a3b24f49cc2694
 - name: github.com/streadway/amqp
-  version: 63795daa9a446c920826655f26ba31c81c860fd6
+  version: 2cbfe40c9341ad63ba23e53013b3ddc7989d801c
+- name: github.com/tealeg/xlsx
+  version: cbd41c13621a761938cfef0a3d365a75968d54d9
 testImports: []

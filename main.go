@@ -13,7 +13,9 @@ func testUtils() {
 	//utils.TestRabbitMQ()
 
 	/*Excel操作*/
-	utils.TestExcel()
+	//utils.TestExcel()
+	//utils.ReadXlsx()
+	utils.WriteXlsx()
 }
 
 /*包*/
