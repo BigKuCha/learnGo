@@ -15,7 +15,8 @@ func testUtils() {
 	/*Excel操作*/
 	//utils.TestExcel()
 	//utils.ReadXlsx()
-	utils.WriteXlsx()
+	//utils.WriteXlsx()
+	utils.WriteXlsxFromOrm()
 }
 
 /*包*/
