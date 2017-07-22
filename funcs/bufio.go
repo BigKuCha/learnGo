@@ -4,11 +4,51 @@ import (
 	"bufio"
 	"fmt"
 	"strings"
+	"os"
 )
 
 func TestBufio() {
 	//readAndPeek()
-	readLine()
+	//readLine()
+	//scanWords()
+	//readFromStdin()
+	readFromFile()
+}
+
+type MyReader struct {
+}
+
+func (m MyReader) Read(a []byte) (int, error) {
+	return 1, nil
+}
+func readFromFile() {
+	f, err := os.Open("funcs/bufio.go")
+	return
+	if err != nil {
+		fmt.Println(err)
+	}
+	reader := bufio.NewScanner(f)
+	for reader.Scan() {
+		fmt.Println(reader.Text())
+	}
+}
+func readFromStdin() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("请输入文字>")
+	for {
+		fmt.Print("Command>")
+		line, _, _ := reader.ReadLine()
+		fmt.Println(line)
+	}
+}
+
+func scanWords() {
+	str := "Hi,I am Poly!"
+	scanner := bufio.NewScanner(strings.NewReader(str))
+	scanner.Split(bufio.ScanRunes)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text()) // 逐行输出 H i , I...
+	}
 }
 
 func readAndPeek() {

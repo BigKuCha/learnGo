@@ -1,10 +1,10 @@
 package main
 
-import "learnGo/utils"
+import "learnGo/funcs"
 
 func main() {
-	//testFuncs()
-	testUtils()
+	testFuncs()
+	//testUtils()
 }
 
 /*功能*/
@@ -16,7 +16,7 @@ func testUtils() {
 	//utils.TestExcel()
 	//utils.ReadXlsx()
 	//utils.WriteXlsx()
-	utils.WriteXlsxFromOrm()
+	//utils.WriteXlsxFromOrm()
 }
 
 /*包*/
@@ -47,7 +47,7 @@ func testFuncs() {
 	//funcs.TestChannels()
 
 	/*包bufio*/
-	//funcs.TestBufio()
+	funcs.TestBufio()
 
 	/*包flag*/
 	//funcs.TestFlag()
