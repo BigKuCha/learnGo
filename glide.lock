@@ -1,18 +1,16 @@
 hash: d4edb6ffcee1f2306ab7511aafa6bc3bd5d5b851821ebf4fef348b2568e09c5f
-updated: 2017-07-11T11:42:25.146837863+08:00
+updated: 2017-07-22T11:53:38.368956422+08:00
 imports:
-- name: github.com/astaxie/beego
-  version: cab8458c1c4a5a3b4bf5192922be620e6dede15b
-  subpackages:
-  - session
-  - session/mysql
-  - utils
 - name: github.com/go-sql-driver/mysql
   version: bf7f34fef176d890dfcc6e94319ac747291bc09a
 - name: github.com/jinzhu/gorm
   version: 5174cc5c242a728b435ea2be8a2f7f998e15429b
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
 - name: github.com/streadway/amqp
   version: 2cbfe40c9341ad63ba23e53013b3ddc7989d801c
 - name: github.com/tealeg/xlsx
-  version: cbd41c13621a761938cfef0a3d365a75968d54d9
+  version: 8be35264fa75a1bbe954ce51eba04f273e2c59e5
 testImports: []

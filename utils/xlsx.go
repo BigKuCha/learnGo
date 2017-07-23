@@ -26,7 +26,7 @@ func ReadXlsx() {
 	sheet := xlFile.Sheet[sheetName]
 	for _, row := range sheet.Rows {
 		for _, cell := range row.Cells {
-			text, _ := cell.String()
+			text := cell.String()
 			fmt.Println(text)
 		}
 	}
