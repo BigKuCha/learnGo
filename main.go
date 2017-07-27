@@ -1,13 +1,13 @@
 package main
 
 import (
-	"learnGo/utils"
 	"learnGo/funcs"
+	"learnGo/utils"
 )
 
 func main() {
-	testFuncs()
-	//testUtils()
+	//testFuncs()
+	testUtils()
 }
 
 /*功能*/
@@ -22,7 +22,10 @@ func testUtils() {
 	//utils.WriteXlsxFromOrm()
 
 	/*Aes加解密*/
-	utils.TestAes()
+	//utils.TestAes()
+
+	/*demo channel*/
+	utils.TestChannel()
 }
 
 /*包*/
