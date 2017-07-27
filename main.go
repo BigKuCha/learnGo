@@ -2,29 +2,12 @@ package main
 
 import (
 	"learnGo/utils"
-	"crypto/des"
-	"log"
-	"fmt"
-	"crypto/aes"
+	"learnGo/funcs"
 )
 
 func main() {
-	k := "1234567812345678"
-	b, e := aes.NewCipher([]byte(k))
-	if e != nil {
-		log.Fatalln(e)
-	}
-	fmt.Println(b.BlockSize())
-	return
-	//testFuncs()
+	testFuncs()
 	//testUtils()
-	key := "12345678"
-	block, err := des.NewCipher([]byte(key))
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(block.BlockSize())
-	fmt.Printf("%+v", block)
 }
 
 /*功能*/
@@ -90,4 +73,7 @@ func testFuncs() {
 
 	/*信号*/
 	//funcs.TestSignal()
+
+	/*Http*/
+	funcs.TestHttp()
 }
