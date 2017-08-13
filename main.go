@@ -2,11 +2,17 @@ package main
 
 import (
 	"learnGo/packages"
+	"learnGo/plugins"
 )
 
 func main() {
-	gopackages()
+	//gopackages()
 	//gofuncs()
+	goplugins()
+}
+
+func goplugins() {
+	plugins.RunTest2go()
 }
 
 /*功能*/
