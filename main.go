@@ -1,82 +1,82 @@
 package main
 
 import (
-	"learnGo/funcs"
-	"learnGo/utils"
+	"learnGo/packages"
 )
 
 func main() {
-	//testFuncs()
-	testUtils()
+	gopackages()
+	//gofuncs()
 }
 
 /*功能*/
-func testUtils() {
+func gofuncs() {
 	/*消息队列*/
-	//utils.TestRabbitMQ()
+	//funcs.TestRabbitMQ()
+	//funcs.TestRabbitMQ()
 
 	/*Excel操作*/
-	//utils.TestExcel()
-	//utils.ReadXlsx()
-	//utils.WriteXlsx()
-	//utils.WriteXlsxFromOrm()
+	//funcs.TestExcel()
+	//funcs.ReadXlsx()
+	//funcs.WriteXlsx()
+	//funcs.WriteXlsxFromOrm()
 
 	/*Aes加解密*/
-	//utils.TestAes()
+	//funcs.TestAes()
 
 	/*demo channel*/
-	utils.TestChannel()
+	//funcs.TestChannel()
 }
 
 /*包*/
-func testFuncs() {
+func gopackages() {
 	/*goroutine more*/
-	//funcs.TestG()
+	//packages.TestG()
 
 	/*反射*/
-	//funcs.TestReflect()
+	//packages.TestReflect()
 
 	/*包os*/
-	//funcs.TestOs()
+	//packages.TestOs()
 
 	/*包string*/
-	//funcs.TestString()
+	//packages.TestString()
 
 	/*包strconv*/
-	//funcs.TestStrconv()
+	//packages.TestStrconv()
 
 	/*包log*/
-	//funcs.TestLogger()
+	//packages.TestLogger()
 
 	/*goroutine*/
-	//funcs.TestGoRoutineFib()
-	//funcs.TestGoroutineLock()
+	//packages.TestGoRoutineFib()
+	//packages.TestGoroutineLock()
 
 	/*channels*/
-	//funcs.TestChannels()
+	//packages.TestChannels()
 
 	/*包bufio*/
-	//funcs.TestBufio()
+	//packages.TestBufio()
 
 	/*包flag*/
-	//funcs.TestFlag()
+	//packages.TestFlag()
 
 	/*包fmt*/
-	//funcs.TestFmt()
+	//packages.TestFmt()
 
 	/*包os/exec*/
-	//funcs.TestExec()
+	//packages.TestExec()
 
 	/*Goroutine with Channel*/
 	//funcs.TestRouChan()
-	//funcs.TestExport()
+	//packages.TestExport()
 
 	/*Select*/
-	//funcs.TestSelect()
+	//packages.TestSelect()
 
 	/*信号*/
-	//funcs.TestSignal()
+	//packages.TestSignal()
 
 	/*Http*/
-	funcs.TestHttp()
+	packages.TestHttp()
 }

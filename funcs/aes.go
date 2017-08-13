@@ -1,11 +1,11 @@
-package utils
+package funcs
 
 import (
 	"bytes"
-	"fmt"
 	"crypto/aes"
 	"crypto/cipher"
 	"encoding/base64"
+	"fmt"
 )
 
 func TestAes() {

@@ -1,10 +1,10 @@
-package utils
+package funcs
 
 import (
-	"sync"
 	"fmt"
-	"time"
 	"math/rand"
+	"sync"
+	"time"
 )
 
 var wg sync.WaitGroup

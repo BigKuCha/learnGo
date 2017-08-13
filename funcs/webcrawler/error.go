@@ -52,5 +52,5 @@ func (mce *myCrawlerError) genFullErrMsg() {
 
 //创建一个新的爬虫错误
 func NewCrawlerError(errType ErrorType, errMsg string) CrawlerError {
-	return &myCrawlerError{errType:errType, errMsg:errMsg}
+	return &myCrawlerError{errType: errType, errMsg: errMsg}
 }

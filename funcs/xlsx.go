@@ -1,13 +1,13 @@
-package utils
+package funcs
 
 import (
-	"github.com/tealeg/xlsx"
-	"log"
 	"fmt"
-	"strconv"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/tealeg/xlsx"
 	"learnGo/model"
+	"log"
+	"strconv"
 	"time"
 )
 

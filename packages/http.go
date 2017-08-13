@@ -1,11 +1,12 @@
-package funcs
+package packages
 
 import (
-	"net/http"
-	"log"
-	"io/ioutil"
 	"encoding/json"
+	"fmt"
 	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
 	"os"
 )
 
@@ -23,5 +24,5 @@ func Get() {
 	var body map[string]interface{}
 	json.Unmarshal(b, &body)
 	io.Copy(os.Stdout, resp.Body)
-	//fmt.Printf("姓名:%v, 年龄:%v, 工资: %v \n", body["name"], body["age"], body["salary"])
+	fmt.Printf("姓名:%v, 年龄:%v, 工资: %v \n", body["name"], body["age"], body["salary"])
 }

@@ -9,7 +9,7 @@ type Response struct {
 }
 
 func NewResponse(httpRes *http.Response, depth uint32) *Response {
-	return &Response{httpRes:httpRes, depth: depth}
+	return &Response{httpRes: httpRes, depth: depth}
 }
 
 func (res *Response) HttpRes() *http.Response {

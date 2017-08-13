@@ -10,7 +10,7 @@ type Request struct {
 
 //创建新的请求
 func NewRequest(httpReq *http.Request, depth uint32) *Request {
-	return &Request{httpReq:httpReq, depth:depth}
+	return &Request{httpReq: httpReq, depth: depth}
 }
 
 func (req *Request) HttpReq() *http.Request {

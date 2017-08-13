@@ -1,10 +1,10 @@
-package funcs
+package packages
 
 import (
 	"bufio"
 	"fmt"
-	"strings"
 	"os"
+	"strings"
 )
 
 func TestBufio() {
