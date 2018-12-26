@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	//gopackages()
+	gopackages()
 	//gofuncs()
-	goplugins()
+	//goplugins()
 }
 
 func goplugins() {
@@ -84,5 +84,8 @@ func gopackages() {
 	//packages.TestSignal()
 
 	/*Http*/
-	packages.TestHttp()
+	//packages.TestHttp()
+
+	//packages.TryNet()
+	packages.TryContext()
 }
