@@ -1,18 +1,16 @@
 package main
 
-import (
-	"learnGo/packages"
-	"learnGo/plugins"
-)
+import "learnGo/plugins"
 
 func main() {
-	gopackages()
+	//gopackages()
 	//gofuncs()
-	//goplugins()
+	goplugins()
 }
 
 func goplugins() {
-	plugins.RunTest2go()
+	//plugins.RunTest2go()
+	plugins.RunEtcd()
 }
 
 /*功能*/
@@ -87,5 +85,5 @@ func gopackages() {
 	//packages.TestHttp()
 
 	//packages.TryNet()
-	packages.TryContext()
+	//packages.TryContext()
 }
