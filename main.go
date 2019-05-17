@@ -1,16 +1,16 @@
 package main
 
-import "learnGo/plugins"
+import "learnGo/funcs"
 
 func main() {
 	//gopackages()
-	//gofuncs()
-	goplugins()
+	gofuncs()
+	//goplugins()
 }
 
 func goplugins() {
 	//plugins.RunTest2go()
-	plugins.RunEtcd()
+	//plugins.RunEtcd()
 }
 
 /*功能*/
@@ -30,6 +30,7 @@ func gofuncs() {
 
 	/*demo channel*/
 	//funcs.TestChannel()
+	funcs.RunRecover()
 }
 
 /*包*/
