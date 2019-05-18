@@ -1,10 +1,13 @@
 package main
 
-import "learnGo/funcs"
+import (
+	"learnGo/funcs"
+	"learnGo/packages"
+)
 
 func main() {
-	//gopackages()
-	gofuncs()
+	gopackages()
+	//gofuncs()
 	//goplugins()
 }
 
@@ -30,6 +33,7 @@ func gofuncs() {
 
 	/*demo channel*/
 	//funcs.TestChannel()
+	/* Recover */
 	funcs.RunRecover()
 }
 
@@ -87,4 +91,7 @@ func gopackages() {
 
 	//packages.TryNet()
 	//packages.TryContext()
+
+	// packages.Image
+	packages.NewPngImg()
 }
