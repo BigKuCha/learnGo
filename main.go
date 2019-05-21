@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/bigkucha/learnGo/funcs"
+	"github.com/bigkucha/learnGo/packages"
 )
 
 func main() {
@@ -12,6 +13,7 @@ func main() {
 
 func goplugins() {
 	//plugins.RunTest2go()
+	//plugins.RunEtcd()
 }
 
 /*功能*/
@@ -31,6 +33,7 @@ func gofuncs() {
 
 	/*demo channel*/
 	//funcs.TestChannel()
+	/* Recover */
 	funcs.RunRecover()
 }
 
@@ -88,4 +91,7 @@ func gopackages() {
 
 	//packages.TryNet()
 	//packages.TryContext()
+
+	// packages.Image
+	packages.NewPngImg()
 }
