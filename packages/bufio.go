@@ -3,16 +3,29 @@ package packages
 import (
 	"bufio"
 	"fmt"
+	"github.com/urfave/cli"
 	"os"
 	"strings"
 )
 
-func TestBufio() {
-	//readAndPeek()
-	//readLine()
-	//scanWords()
-	//readFromStdin()
-	readFromFile()
+func Bufio(ctx *cli.Context) {
+	switch ctx.Int("method") {
+	case 1:
+		readFromFile() // 从文件读
+		break
+	case 2:
+		readFromStdin() // 从标准输入读
+		break
+	case 3:
+		scanWords()
+		break
+	case 4:
+		readAndPeek()
+		break
+	case 5:
+		readLine()
+		break
+	}
 }
 
 type MyReader struct {
@@ -21,9 +34,10 @@ type MyReader struct {
 func (m MyReader) Read(a []byte) (int, error) {
 	return 1, nil
 }
+
+// m=1
 func readFromFile() {
-	f, err := os.Open("funcs/bufio.go")
-	return
+	f, err := os.Open("packages/bufio.go")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -32,6 +46,8 @@ func readFromFile() {
 		fmt.Println(reader.Text())
 	}
 }
+
+// m=2
 func readFromStdin() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("请输入文字>")
@@ -42,6 +58,7 @@ func readFromStdin() {
 	}
 }
 
+//m=3
 func scanWords() {
 	str := "Hi,I am Poly!"
 	scanner := bufio.NewScanner(strings.NewReader(str))
@@ -51,6 +68,7 @@ func scanWords() {
 	}
 }
 
+// m=5
 func readAndPeek() {
 	str := "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890S"
 	strReader := strings.NewReader(str)
@@ -73,6 +91,7 @@ func readAndPeek() {
 	}
 }
 
+// m=6
 func readLine() {
 	sr := strings.NewReader("ABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\nabcdefgd\n!@#$%a&")
 	bufReader := bufio.NewReaderSize(sr, 0) // 缓冲区最小16字节 bufio.minReadBufferSize

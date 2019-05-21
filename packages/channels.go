@@ -2,21 +2,27 @@ package packages
 
 import (
 	"fmt"
+	"github.com/urfave/cli"
 	"time"
 )
 
-func TestChannels() {
-	/*基础用法*/
-	//basicUseOfChan()
-
-	/*rangeChannel*/
-	//rangeChan()
-
-	/*带缓存的chan*/
-	//cacheChan()
-	test()
+func Channel(ctx *cli.Context) {
+	switch ctx.Int("m") {
+	case 1:
+		basicUseOfChan()
+		break
+	case 2:
+		rangeChan()
+		break
+	case 3:
+		cacheChan()
+		break
+	default:
+		test()
+	}
 }
 
+// default
 func test() {
 	var ch = make(chan int)
 	num := 11
@@ -37,6 +43,7 @@ func test() {
 	fmt.Println("程序运行结束")
 }
 
+// 1
 func basicUseOfChan() {
 	ch := make(chan int)
 	defer close(ch)
@@ -51,6 +58,7 @@ func basicUseOfChan() {
 	}
 }
 
+// 2
 func rangeChan() {
 	chInt := make(chan int)
 	chSquare := make(chan int)
@@ -73,6 +81,7 @@ func rangeChan() {
 	}
 }
 
+// 3
 func cacheChan() {
 	chInt := make(chan int, 3)
 

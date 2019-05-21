@@ -2,6 +2,7 @@ package packages
 
 import (
 	"fmt"
+	"github.com/urfave/cli"
 )
 
 type car struct {
@@ -9,7 +10,7 @@ type car struct {
 	Price float32
 }
 
-func TestFmt() {
+func Fmt(ctx *cli.Context) {
 	carBMW := car{Brand: "BMW", Price: 500000}
 	fmt.Printf("%v\n", carBMW)  //默认格式
 	fmt.Printf("%+v\n", carBMW) //打印struct（包含字段名）
