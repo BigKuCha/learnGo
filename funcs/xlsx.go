@@ -2,10 +2,10 @@ package funcs
 
 import (
 	"fmt"
+	"github.com/bigkucha/learnGo/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/tealeg/xlsx"
-	"learnGo/model"
 	"log"
 	"strconv"
 	"time"

@@ -1,10 +1,10 @@
-hash: 93c9341cfe609c601995171d29ff2cea4435a9b145b256a4ce75a4a53f7aeeac
-updated: 2018-12-26T19:54:57.973547+08:00
+hash: f78bd7606451c220553da72f6316fb076af6a685e162cdc49ff59fcdac64c23a
+updated: 2019-05-21T22:42:37.6229482+08:00
 imports:
 - name: github.com/go-sql-driver/mysql
-  version: a0583e0143b1624142adab07e0e97fe106d99561
+  version: 877a9775f06853f611fb2d4e817d92479242d1cd
 - name: github.com/jinzhu/gorm
-  version: 472c70caa40267cb89fd8facb07fe6454b578626
+  version: b7156195f7f3415f97c20abbd6aff894b847fee8
   subpackages:
   - dialects/mysql
 - name: github.com/jinzhu/inflection
@@ -12,11 +12,11 @@ imports:
 - name: github.com/muesli/cache2go
   version: 5a1839810579c34bbb4f8232e6554a5b61daeb74
 - name: github.com/streadway/amqp
-  version: e5adc2ada8b8efff032bf61173a233d143e9318e
+  version: 75d898a42a940fbc854dfd1a4199eabdc00cf024
 - name: github.com/tealeg/xlsx
   version: 8be35264fa75a1bbe954ce51eba04f273e2c59e5
-- name: go.etcd.io/etcd
-  version: 27fc7e2296f506182f58ce846e48f36b34fe6842
+- name: google.golang.org/appengine
+  version: 311d3c5cf9373249645db030e53c37c209a8b378
   subpackages:
-  - clientv3
+  - cloudsql
 testImports: []

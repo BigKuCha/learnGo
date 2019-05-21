@@ -1,16 +1,17 @@
 package main
 
-import "learnGo/plugins"
+import (
+	"github.com/bigkucha/learnGo/funcs"
+)
 
 func main() {
 	//gopackages()
-	//gofuncs()
-	goplugins()
+	gofuncs()
+	//goplugins()
 }
 
 func goplugins() {
 	//plugins.RunTest2go()
-	plugins.RunEtcd()
 }
 
 /*功能*/
@@ -30,6 +31,7 @@ func gofuncs() {
 
 	/*demo channel*/
 	//funcs.TestChannel()
+	funcs.RunRecover()
 }
 
 /*包*/
