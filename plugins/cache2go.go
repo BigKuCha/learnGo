@@ -1,8 +1,8 @@
 package plugins
 
 import (
-	"github.com/muesli/cache2go"
 	"fmt"
+	"github.com/muesli/cache2go"
 	"time"
 )
 
