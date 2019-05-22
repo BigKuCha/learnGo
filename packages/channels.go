@@ -7,7 +7,7 @@ import (
 )
 
 func Channel(ctx *cli.Context) {
-	switch ctx.Int("m") {
+	switch ctx.GlobalInt("m") {
 	case 1:
 		basicUseOfChan()
 		break

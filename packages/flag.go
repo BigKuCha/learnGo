@@ -3,11 +3,18 @@ package packages
 import (
 	"flag"
 	"fmt"
+	"github.com/urfave/cli"
 )
 
-func TestFlag() {
-	basicUseOfFlag()
-	//flagSet()
+func Flag(ctx *cli.Context) {
+	switch ctx.GlobalInt("m") {
+	case 1:
+		basicUseOfFlag()
+		break
+	case 2:
+		flagSet()
+		break
+	}
 }
 
 //基础用法

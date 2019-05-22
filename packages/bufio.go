@@ -9,7 +9,7 @@ import (
 )
 
 func Bufio(ctx *cli.Context) {
-	switch ctx.Int("method") {
+	switch ctx.GlobalInt("m") {
 	case 1:
 		readFromFile() // 从文件读
 		break

@@ -3,13 +3,14 @@ package packages
 import (
 	"context"
 	"fmt"
+	"github.com/urfave/cli"
 	"sync"
 	"time"
 )
 
 var wg sync.WaitGroup
 
-func TryContext() {
+func Context(c *cli.Context) {
 	ctx, _ := context.WithTimeout(context.Background(), 5*time.Second)
 	wg.Add(2)
 	go work(ctx, "work1")

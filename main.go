@@ -9,6 +9,12 @@ import (
 
 func main() {
 	app := cli.NewApp()
+	app.Flags = []cli.Flag{
+		cli.IntFlag{
+			Name:  "method,m",
+			Value: 1,
+		},
+	}
 	packageCommands := []cli.Command{
 		{
 			Name:   "fmt",
@@ -17,12 +23,22 @@ func main() {
 		{
 			Name:   "bufio",
 			Action: packages.Bufio,
-			Flags:  []cli.Flag{cli.IntFlag{Name: "m", Value: 1}},
 		},
 		{
 			Name:   "channel",
 			Action: packages.Channel,
-			Flags:  []cli.Flag{cli.IntFlag{Name: "m"}},
+		},
+		{
+			Name:   "context",
+			Action: packages.Context,
+		},
+		{
+			Name:   "exec",
+			Action: packages.Exec,
+		},
+		{
+			Name:   "flag",
+			Action: packages.Flag,
 		},
 	}
 	funcsCommands := []cli.Command{}
