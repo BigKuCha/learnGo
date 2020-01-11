@@ -40,6 +40,10 @@ func main() {
 			Name:   "flag",
 			Action: packages.Flag,
 		},
+		{
+			Name:   "cond",
+			Action: packages.Cond,
+		},
 	}
 	funcsCommands := []cli.Command{}
 
