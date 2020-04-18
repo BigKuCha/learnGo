@@ -44,8 +44,12 @@ func main() {
 			Name:   "cond",
 			Action: packages.Cond,
 		},
+		{
+			Name:   "tpl",
+			Action: packages.Tpl,
+		},
 	}
-	funcsCommands := []cli.Command{}
+	var funcsCommands []cli.Command
 
 	app.Commands = append(packageCommands, funcsCommands...)
 	err := app.Run(os.Args)
